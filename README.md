@@ -41,10 +41,20 @@ This [notebook](MLP-FashionMNIST.ipynb) sets up a pipeline for training and runn
 
 We have integrated [Weights and Bias](https://wandb.ai/site) in our experiments. By this means, we tracked and logged the model specification, hyperparameters, performance results for every run of our experiments. The results can be access at this [interactive web platform](https://wandb.ai/maoli131/cs294-082-final). `wandb` will also automatically creates experiments tracking in the folder `wandb/`
 
-## Important Nodes
+## Experiment Guide
 
-Before running our experiments, make sure to put [Fashion-MNIST dataset](https://www.kaggle.com/zalando-research/fashionmnist) at `data/` folder, with name `train.csv` or `test.cvs`. Also, please create a virtual conda environment as following. 
+### Datasets
+
+Datasets should be stored at `data/` folder. Please download the `.csv` Fashion-MNIST dataset from [Kaggle](https://www.kaggle.com/zalando-research/fashionmnist). The file name should be `train.csv` or `test.csv`. 
+
+### Conda Environment
+To run our codes smoothly, please create a virtual conda environment as following and activate it. 
 ```
 $ conda create --name exp-design --file requirements.txt
+$ conda activate exp-design
 ``` 
-With this virtual conda environment named `exp-design`, we can then run all codes smoothly. A GPU device is highly recommended. 
+A GPU device is highly recommended. 
+
+### Weights and Bias
+
+To enable experiment log and tracking on your own, you should register an account at Weights and Bias [website](https://wandb.ai/site). Then simply follow the prompts in MLP-FashionMNIST notebook to login. The logs should be automatically up. Project name in `wandb` can be specified in `model_pipeline` function. 
